@@ -1,0 +1,61 @@
+#citas{
+    border-width: 3px;
+    border-style: solid;
+    border-image: linear-gradient(135deg,#75c7ff, #759eff, #ffbf75) 3;
+    background-color:   rgb(245, 241, 241);
+    width: 800px;
+    margin-left: 50px;
+}
+
+#cancelar{
+    border-width: 3px;
+    border-style: solid;
+    border-image: linear-gradient(135deg,#75c7ff, #759eff, #ffbf75) 3;
+    background-color:   rgb(245, 241, 241);
+    margin-left: 50px;
+    margin-top: 10px;
+}
+
+#reprogramar{
+    border-width: 3px;
+    border-style: solid;
+    border-image: linear-gradient(135deg,#75c7ff, #759eff, #ffbf75) 3;
+    background-color:   rgb(245, 241, 241);
+    margin-left: 50px;
+    width: 100px;
+    padding: 5px;
+    margin-top: 10000px;
+    text-decoration: none;
+    color: black;
+}
+
+#pa1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    border-width: 3px;
+    border-style: solid;
+    border-image: linear-gradient(135deg,#75c7ff, #759eff, #ffbf75) 3;
+    background-color:   rgb(245, 241, 241);
+    width: 600px;
+    margin-left: 600px;
+    padding: 15px;
+
+}
+
+#pa1 a{
+    color: #75c7ff ;
+    margin: 30px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h2{
+    font-family: Arial, Helvetica, sans-serif;
+    color:  #eb651c;
+ }
+
+
+ .ul, li, a {
+    margin-top: 20px;
+    color: #000;
+  }

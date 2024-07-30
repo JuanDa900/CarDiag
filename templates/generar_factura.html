@@ -1,0 +1,64 @@
+{% extends 'index/index2.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/factura.css'%}"> 
+    <title>Confirmar pago</title>
+</head>
+
+<body>
+
+    <div id="factura">
+        <center>
+        <div id="factura2">
+            <form method="post" action="{% url 'generar_factura' %}" id="factura-form">
+                {% csrf_token %}
+                <ul class="errorlist">
+                    <li>Este campo es obligatorio.</li>
+                </ul>
+                <p>
+                    <label for="id_nombre">Correo Electronico:</label>
+                    <input type="text" name="nombre" maxlength="100" required id="id_nombre">
+                </p>
+
+                <ul class="errorlist">
+                    <li>Este campo es obligatorio.</li>
+                </ul>
+                <p>
+                    <label for="id_modo_pago">Modo pago:</label>
+                    <select name="modo_pago" required id="id_modo_pago">
+                        <option value="" selected></option>
+
+                        <option value="nequi">Nequi</option>
+
+                        <option value="tarjeta_credito">Tarjeta de Crédito</option>
+
+                        <option value="tarjeta_debito">Tarjeta de Débito</option>
+
+                        <option value="efectivo">Efectivo</option>
+
+                    </select>
+                </p>
+
+                <button type="submit" name="btn-factura" id="btn-factura">Generar pago</button>
+            </form>
+
+        </div>
+    </center>
+
+    </div>
+
+    </div>
+
+</body <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+
+</html>
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends 'index/index2.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/edit_profile.css' %}?v=2">
+    <title>Editar perfil</title>
+</head>
+
+<body>
+    <div class="py-3 d-flex justify-content-center vh-100">
+        <fieldset>
+            <div id="nombre">
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" id="formu">Guardar Cambios</button>
+                </form>
+            </div>
+
+            <div id="nombre">
+                <form method="post">
+                    {% csrf_token %}
+                    {{ password_form.as_p }}
+                    <button type="submit" name="change_password" id="formu">Cambiar Contraseña</button>
+                </form>
+            </div>
+
+        </fieldset>
+
+        <input type="checkbox" id="btn-modal">
+        <label for="btn-modal" class="lbl-modal" id="eliminar">Eliminar Perfil</label>
+        <div class="modal">
+            <div class="contenedor">
+                <header>
+                    <h6>¡Eliminar cuenta!</h6>
+                </header>
+                <h2>¿Estás seguro de que quieres eliminar tu perfil?</h2>
+
+                <form method="post" action="{% url 'deleteprofile' %}">
+                    {% csrf_token %}
+                    <button type="submit" id="yes">Sí, eliminar</button>
+                </form>
+
+                <a id="salir" href="{% url 'profile' %}">No, volver al perfil</a>
+            </div>
+        </div>
+    </div>
+    </div>
+
+</body>
+
+</html>
+
+{% endblock %}

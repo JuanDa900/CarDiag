@@ -1,0 +1,124 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Estilos del menú */
+.navbar-expand-lg .navbar-collapse {
+    display: flex!important;
+    flex-basis: auto;
+    flex-direction: row-reverse;
+    margin: 0 100px;
+}
+nav {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    background: linear-gradient(135deg, #525558, #75c7ff, #759eff, #ffbf75, #ffa43a);
+    padding: 0 20px;
+}
+
+#menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    margin-right: 70px;
+}
+
+#menu a {
+    text-decoration: none;
+    padding: 6px 20px;
+    color: white;
+    margin: 0 10px;
+    
+}
+
+#menu a:hover {
+    background-color: #264350;
+    border-radius: 3em;
+}
+
+#logo {
+    flex-shrink: 0;
+}
+
+#cardiag{
+    font-weight: 1000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: xx-large;
+    color: #FFFFFF;
+    margin-left: 10px;
+}
+
+footer {
+    background:linear-gradient(135deg,#525558, #75c7ff, #759eff, #ffbf75, #ffa43a);
+    padding: 0 20px;
+    padding: 3em 6em 0;
+    font-size: 10px;
+    position: end;
+    bottom: 0;
+}
+
+
+#container.py-5 {
+    position: end;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+
+footer.ul,li,a {
+    color: #FFFFFF; 
+    text-decoration: none;
+}
+
+footer a:hover {
+    background-color: #891d2d;
+    border-radius: 3em;
+}
+
+/* carrito */
+.content {
+    padding: 20px;
+}
+
+.open-cart-button {
+    position: fixed;
+    bottom: 887px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #75c7ff;
+    color: #fff;
+    border: none;
+    border-radius: 80em;
+    cursor: pointer;
+}
+
+.cart-popup {
+    display: none;
+    position: fixed;
+    top: 22%;
+    right: 0; /* Alinea la ventana emergente a la derecha */
+    transform: translate(0, -50%); /* Centra verticalmente */
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+}
+
+.close-cart-button {
+    background-color: #ff0000;
+    color: #fff;
+    position: fixed;
+    right: 0;
+    border: none;
+    border-radius: 50em;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 0;
+}
+
+h2{
+    margin-top: 40px;
+}

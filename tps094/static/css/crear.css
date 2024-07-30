@@ -1,0 +1,86 @@
+body{
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+#cuadro{
+   padding: 20px;
+   width: 80%;
+   height: 600px;
+   border-radius: 2em;
+   background: linear-gradient(135deg, #75c7ff, #759eff, #ffbf75);
+   display: flex;
+   justify-content: space-between;
+
+}
+
+.columna1, .columna2 {
+   flex: 1;
+}
+
+#slogan{
+   padding-left: 50px;
+   color: #FFFFFF;
+   font-family: Arial, Helvetica, sans-serif;
+   
+}
+
+p, i{
+   color:  #FFFFFF;
+   font-family: Arial, Helvetica, sans-serif;
+   padding-left: 50px;
+}
+
+form{
+   border-radius: 1em;
+   background:linear-gradient(to bottom right, #759eff, #ffbf75, #ffa43a);
+   padding: 20px;
+   float: right;
+   width: 400px;
+   position: relative; right: 100px; bottom: 50px;
+   margin-top: 100px;
+   border: solid #f9f9f9 1px;
+}
+
+label{
+   color: #426472;
+   font-size: large;
+}
+
+input{
+   border: 2px solid #426472;
+   width: 90%;
+}
+
+button{
+   padding: 5px;
+   border: none;
+   position: relative; left: 100px;
+   background-color: #426472;
+   color: white;
+   transition: 0.3s;
+   border-radius: 1em;
+}
+
+button:hover{
+   background-color: #264350;
+}
+
+.row {
+   display: flex;
+   -ms-flex-wrap: wrap;
+   flex-wrap: wrap;
+   margin-right: 5px;
+   margin-left: 5px;
+}
+
+h2, h1{
+   font-family: Arial, Helvetica, sans-serif;
+   color:  #eb651c;
+}
+
+#marca{
+   padding: 100px;
+   display: flex;
+   justify-content: space-between;
+}
+

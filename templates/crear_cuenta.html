@@ -1,0 +1,43 @@
+{% extends 'index/index.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.2/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/crear.css' %}">
+    <title>Crear Cuenta en CarDiag</title>
+</head>
+
+<body>
+    <div class="py-5 d-flex justify-content-center">
+        <fieldset id="cuadro" class="d-flex">
+            <div class="columna1">
+                <h1 class="display-3" id="slogan">Diagnóstico confiable para un viaje sin preocupación</h1>
+                <p>Somos la red de talleres mecánicos más grande del país, brindándote calidad, precios justos y garantía post servicio.</p>
+                <i class="fas fa-wrench"></i></i><p>+ 108 Talleres aliados</p>
+            </div>
+            <div class="columna2 py-5">
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button id="boton" type="submit">Enviar</button>
+                </form>
+            </div>
+        </fieldset>
+    </div>
+
+    <div id="marca" class="py-0">
+        <h1 class="display-4">Marcas que atendemos</h1>
+    </div>
+
+    <div class="py-0 d-flex justify-content-center" id="marca" >
+        <img src="{% static 'imagenes/marcas.jpeg'%}"  class="img-fluid" alt="Responsive image">
+    </div>
+</body <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+</html>
+{% endblock %}

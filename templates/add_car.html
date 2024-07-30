@@ -1,0 +1,71 @@
+{% extends 'index/index2.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/add_car2.css' %}?v=2">
+    <script src="{% static 'js/add_car.js' %}"></script>
+    <title>Registrar automovil</title>
+</head>
+
+<body>
+
+    <div class="py-3 d-flex justify-content-center">
+        <div id="formulario">
+            <div class="columna1">
+                <h1 class="display-5" id="slogan">Registra tu vehiculo para empezar con el Diagnostico</h1>
+            </div>
+            <div class="columna2 py-5">
+                <form method="post" id="car-form">
+                    {% csrf_token %}
+                    <div class="form-section">
+                        <label>Nombre del automóvil</label>
+                        {{ form.name }}
+                    </div>
+                    <div class="form-section">
+                        <label>Marca del automóvil</label>
+                        {{ form.marca }}
+                    </div>
+                    <div class="form-section">
+                        <label>Línea del automóvil</label>
+                        <select name="linea" id="id_linea"></select>
+                    </div>
+                    <div class="form-section">
+                        <label>Modelo del automóvil</label>
+                        {{ form.modelo }}
+                    </div>
+                    <div class="form-section">
+                        <label>Placa del automóvil</label>
+                        {{ form.placa }}
+                    </div>
+                    <div class="form-section">
+                        <label>Tipo de combustible</label>
+                        {{ form.tipo }}
+                    </div>
+                    <div class="form-section">
+                        <label>Kilometraje del automóvil</label>
+                        {{ form.kilometraje }}
+                    </div>
+                    <div class="form-section">
+                        <label for="{{ form.Hibrido.id_for_label }}">Hibrido & ISG
+                            <div class="switch">
+                                {{ form.Hibrido }}
+                                <span class="slider"></span>
+                            </div>
+                        </label>
+                    </div>
+                    <button id="boton" type="submit">Enviar</button>
+                </form>                
+            </div>
+        </div>
+    </div>
+
+</body <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+</html>
+{% endblock %}

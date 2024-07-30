@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#cotizar{
+    width: 500px;
+    height: 500px;
+}
+
+#profilepic {
+    margin: 20px;
+    border-radius: 50em;
+    border: 5px solid #75c7ff;
+}
+
+#username {
+    font-size: xx-large;
+    padding: 20px;
+    margin-right: 10px;
+}
+
+#editarperfil, #añadir {
+    text-decoration: none;
+    padding: 14px 20px;
+    color: white;
+    background-color: #75c7ff;
+    transition: 0.3s;
+    height: 50%;
+    border-radius: 3em;
+    margin-bottom: 10px;
+    margin: 30px;
+}
+
+
+#editarperfil:hover, #añadir:hover {
+    background-color: #264350;
+}
+
+#automoviles {
+    padding: 20px;
+}
+
+.listacarros {
+    padding: 20px;
+}
+
+#carro {
+    text-decoration: none;
+    color: black;
+}
+
+#carpic {
+    border-radius: 50em;
+    border: 5px solid #75c7ff;
+}
+
+#cuadro2 {
+    margin: 20px;
+    width: 50%;
+    height: 500px;
+    border-width: 3px;
+    border-style: solid;
+    border-image: linear-gradient(135deg,#75c7ff, #759eff, #ffbf75) 3;
+    background-color:   rgb(245, 241, 241);
+}
+
+#cuadro1{
+    margin: 20px;
+    width: 20%;
+    height: 500px;
+    border-width: 4px;
+    border-style: solid;
+    border-image: linear-gradient(135deg, #75c7ff, #759eff, #ffbf75) 3;
+    background-color:    rgb(245, 241, 241);
+}
+
+#taller{
+    margin: 20px;
+    margin-left: 500px;
+}
+
+#texto{
+    font-size: xx-large;
+    color: black;
+}
