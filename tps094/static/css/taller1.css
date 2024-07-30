@@ -1,0 +1,121 @@
+#fi1{
+    margin-top: 50px;
+    float: left;
+    width: 800px;
+    border-style: none;
+    margin-left: -350px;
+}
+
+.taller {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul li{
+    color: black;
+    list-style-type: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.texto{
+    width: 100%;
+    position: relative; top: 10px;
+    margin: 25px;
+    text-align: left;
+    font-size: 20px;
+    border-width: 3px;
+    border-style: solid;
+    border-image: linear-gradient(135deg,#75c7ff, #759eff, #ffbf75) 3;
+    background-color:   rgb(245, 241, 241)
+}
+
+img{
+    float: left;
+}
+
+#masinfo{
+    background-color: white;
+    border-radius: 1em;
+    border-color: #75c7ff;
+    border-style: solid;
+    float: right;
+    margin-right: 100px;
+    width: 200px;
+    border-width: 3px;
+    margin-top: 50px; 
+    margin-block-end: 20px;  
+}
+
+#masinfo a{
+    text-decoration: none;
+    color: #75c7ff;
+}
+
+#agendar{
+    background-color: #75c7ff;
+    border-radius: 1em;
+    border-color: #75c7ff;
+    border-style: solid;
+    float: right;
+    margin-right: 20px;
+    width: 200px;
+    margin-top: 50px;
+}
+
+#agendar a{
+    text-decoration: none;
+    color: white;
+}
+
+#logo{
+    padding-left: 50px;
+}
+
+.messages{
+    background-color: #a6c9d1;
+    width: 200px;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 1em;
+    border-style: none;
+    color: black;
+}
+
+#cotizar{
+    width: 800px;
+    float: right;
+    margin-top: 150px;
+    margin-right: -1120px;
+
+}
+
+#b1{
+    border-width: 3px;
+    border-style: solid;
+    border-image: linear-gradient(135deg,#75c7ff, #759eff, #ffbf75) 3;
+    background-color:   rgb(245, 241, 241);
+    width: 200px;
+    float: left;
+    margin-left: -250px;
+    margin-top: 30px;
+}
+
+#b1 a{
+    text-decoration: none;
+    color: black;
+}
+
+.modal-content{
+    border-width: 3px;
+    border-style: solid;
+    border-image: linear-gradient(135deg,#75c7ff, #759eff, #ffbf75) 3;
+    background-color:   rgb(245, 241, 241);
+}
+
+.modal-body{
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+
+
+ 

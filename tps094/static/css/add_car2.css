@@ -1,0 +1,122 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+ 
+#slogan{
+    color: rgba(147, 137, 130, 0.844);
+}
+
+#formulario {
+    padding: 20px;
+    width: 80%;
+    height: 700px;
+}
+
+ 
+/* Switch para Hibrido & ISG */
+.switch {
+    position: relative;
+    left: 130px;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    vertical-align: middle;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #6b6b6b;
+    transition: .4s;
+}
+  
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+}
+  
+
+.switch input:checked + .slider {
+    background-color: #759eff;
+}
+  
+.switch input:checked + .slider:before {
+    transform: translateX(26px);
+}
+  
+
+.slider {
+    border-radius: 34px;
+    border: 1px solid #9eaed2;
+}
+  
+.slider:before {
+    border-radius: 50%;
+}
+  
+#car-form {
+    background: linear-gradient(135deg,  #75c7ff , #759eff, #ffbf75);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.form-section {
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+#boton{
+    background-color: #a6a9ac;
+    border-radius: 2em;
+}
+
+#lado1{
+    float: left;
+    margin-left: 100px;
+}
+
+
+#lado2 {
+    padding-left: 100px;
+    float: right;
+    margin-right: 300px; 
+    
+}
+
+#formulario2 {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+#car-form2 {
+    background: linear-gradient(135deg, #75c7ff , #759eff);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    width: 200%;
+}

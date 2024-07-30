@@ -1,0 +1,93 @@
+strong{
+    color: black;
+}
+
+p{
+    color: black;
+}
+
+#agendarcita{
+    color: blue;
+}
+
+#btn-carrito{
+    width: 100px;
+    height: 100px;
+}
+
+h1{
+    text-align: center;
+}
+
+#fi1{
+
+    text-align: center;
+}
+
+#btn-carrito {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: fixed;
+    font-size: 10px;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+  }
+
+  #carrito-detalle {
+    display: none;
+    background-color: rgba(0, 255, 0, 0.2);
+    padding: 10px;
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 120px; 
+    width: 400px;
+    height: auto;
+    border-bottom: 1px solid #277b27;
+    margin-bottom: 10px;
+  }
+
+#factura {
+    padding-top: 10px; 
+    font-size: 12px;
+    border-top: 1px solid #277b27;
+    margin-top: 10px;
+  }
+
+#btn-factura {
+    background-color: rgb(70, 182, 120);
+    border: 2px solid transparent; 
+    padding: 5px 10px; 
+    border-radius: 10px; 
+    cursor: pointer;
+  }
+
+#btn-factura:hover {
+    background-color: #32cd32; 
+  }
+
+li{
+    color: rgb(69, 65, 65);
+}
+
+input{
+    border: 2px;
+    background-color: rgba(179, 186, 186, 0.63);
+}
+
+select {
+    border: 2px;
+    background-color: rgba(179, 186, 186, 0.63);
+}
+
+.ul, li, a {
+    margin-top: 20px;
+    color: #000;
+}
