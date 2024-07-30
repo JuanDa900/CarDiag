@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}?v=2">
+    <title>CarDiag</title>
+</head>
+
+<body>
+    {% with first_car=request.user.car_set.first %}
+
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand"><img id="logo" src="{% static 'imagenes/image-removebg-preview.png' %}"
+                alt="Logo de CarDiag" height="60" width="100"></a>
+        <p id="cardiag" style="color:#FFFFFF;;">CarDiag</p>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+            <div class="navbar-nav">
+                <li><a href="{% url 'profile' %}"> Perfil</a></li>
+                <li><a href="{% url 'verservicios'%}">Cotizar Serivicios</a></li>
+                <li><a href="{% url 'lista_talleres'%}">Buscar Talleres</a></li>
+                <li>
+                    {% if first_car %}
+                    <a href="{% url 'diagnostico' %}">Iniciar Diagnóstico</a>
+                    {% else %}
+                    <a href="{% url 'profile' %}">Iniciar Diagnostico</a>
+                    {% endif %}
+                </li>
+                <li class="salir"><a href="{% url 'logout' %}">Salir</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    {% endwith %}
+
+    {% block content %}
+    {% endblock %}
+
+    <footer class="bd-footer py-5 mt-5">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-3 mb-3">
+                    <a class="d-inline-flex align-items-center mb-2 link-dark text-decoration-none" href="#">
+                        <img src="{% static 'imagenes/image-removebg-preview.png' %}" alt="" id="img" height="100"
+                            width="150"></path>
+                    </a>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2">
+                            <p style="color:#CCCCCC;">© 2023 Tecnología de Cardiag</p><a href="#"></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2 offset-lg-1 mb-3">
+                    <h5 _msttexthash="92313" _msthash="360">Servicios</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" _msttexthash="59059" _msthash="361">Mecánica Básica</a></li>
+                        <li class="mb-2"><a href="#" _msttexthash="44265" _msthash="362">Mecánica Especializada</a></li>
+                        <li class="mb-2"><a href="#" _msttexthash="44265" _msthash="362">Revisión Automotriz</a></li>
+                        <li class="mb-2"><a href="#" _msttexthash="44265" _msthash="362">Estética Automotriz</a></li>
+                    </ul>
+
+                </div>
+                <div class="col-6 col-lg-2 mb-3">
+                    <h5 _msttexthash="75413" _msthash="367">Nuestras Sedes</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" _msttexthash="95693" _msthash="368">Bogotá</a></li>
+                        <li class="mb-2"><a href="#" _msttexthash="346359" _msthash="369">Medellín</a></li>
+                        <li class="mb-2"><a href="#" _msttexthash="95407" _msthash="371">Cali</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-lg-2 mb-3">
+                    <h5 _msttexthash="139971" _msthash="372">CONTACTOS</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a _msttexthash="149942" _msthash="373">PBX:(1) 812 7797</a></li>
+                        <li class="mb-2"><a _msttexthash="149942" _msthash="373">Correo:Info@CarDiag.com</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2 mb-3">
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" _msttexthash="149942" _msthash="373">Quienes Somos</a></li>
+                        <li class="mb-2"><a href="#" _msttexthash="149942" _msthash="373">¿Cómo Funciona?</a></li>
+                        <li class="mb-2"><a href="#" _msttexthash="149942" _msthash="373">Auto Guía</a></li>
+                        <li class="mb-2"><a href="#" _msttexthash="149942" _msthash="373">Términos Y Condiciones</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    {% block content2 %}
+    {% endblock %}
+</body <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+
+</html>

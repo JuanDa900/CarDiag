@@ -1,0 +1,31 @@
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/login3.css' %}">
+    <title>Iniciar Sesion en CarDiag</title>
+</head>
+<body>
+    <a id="salir" href="{% url 'main' %}">Salir</a>
+    <center>
+        <img id="logo" src="{% static 'imagenes/LogoCarDiag.PNG' %}" alt="" height="500" width="550">
+
+        <h1><strong>Primero debes Iniciar Sesion</strong></h1>
+                    
+        <fieldset>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Iniciar sesión</button>
+            </form>
+        </fieldset>
+        <div id="signup">¿No tienes una cuenta?<a id="crear_cuenta" href="{% url 'main' %}"> Crear Cuenta</a></div>
+    </center>
+</body>
+</html>
+{% endblock %}

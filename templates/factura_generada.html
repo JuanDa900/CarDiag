@@ -1,0 +1,235 @@
+{% extends 'index/index2.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'css/factura.css'%}">
+  <title>Confirmar pago</title>
+  <style>
+    #factura-container {
+    background-color: beige;
+    padding: 20px; 
+    border-radius: 10px; 
+    margin: 0 auto; 
+    max-width: 600px; 
+    height: auto;
+    box-shadow: 0 0 10px rgba(26, 24, 24, 0.344); 
+    margin-top: 30px;
+    border-bottom: 1px solid #277b27;
+    margin-bottom: 10px;
+  }
+
+  
+h1 {
+    text-align: center;
+  }
+
+.factura-seccion {
+    margin-bottom: 30px;
+  }
+
+
+#agendarcita {
+    border-top: 1px solid #277b27;
+    margin-top: 10px;
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    position: absolute;
+    top: 760px;
+    right: 480px;
+
+  }
+
+
+#factura2{
+  margin: 20px;
+  border-radius: 2em;
+  width:800px;
+  height: 300px;
+  border-style: solid;
+  margin-top: 6%;
+  background-color: #f1eeee8d;
+  border-color: #f3e5e58d;
+  text-align: center;
+    
+}
+
+#btn-factura{
+  border-top: 1px solid #277b27;
+    margin-top: 10px;
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    position: absolute;
+}
+
+.ul, li, a {
+  margin-top: 20px;
+  color: #000;
+}
+
+#confirmar {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background: #4caf50;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-left: 70%;
+  border-top: 1px solid #277b27;
+  margin-top: 10px;
+}
+
+#confirmar:hover {
+  background: #45a049;
+}
+
+#modal-background {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+#confirmacion-pago-container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  margin: 20px; /* Ajusta el margen según tus preferencias */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agrega sombra para destacar del fondo */
+  width: 700px;
+  height: auto;
+  text-align: center;
+}
+
+#confirmacion-pago-container h1 {
+  color: #3498db;
+}
+
+#confirmacion-pago-container p {
+  color: #333;
+}
+
+#Volver {
+  display: block;
+  margin-top: 15px;
+  color: #3498db;
+  text-decoration: none;
+}
+
+.boton-pequeno {
+  display: inline-block;
+  padding: 8px 12px; /* Ajusta el tamaño del padding según tus preferencias */
+  margin: 10px; /* Ajusta el margen según tus preferencias */
+  border-radius: 5px;
+  text-decoration: none;
+  color: #fff;
+  background: #7ed481;;
+  transition: background 0.3s ease;
+  font-size: 12px;
+  border-top: 1px solid #277b27;
+  margin-top: 10px;
+  
+}
+
+.boton-pequeno:hover {
+  background:  #45a04987;
+  text-decoration: none;
+}
+
+.bnt-seccion{
+  margin-bottom: 30px;
+  border-top: 1px solid #277b27;
+  margin-top: 20px;
+  
+}
+  </style>
+</head>
+
+<body>
+
+  <div id="factura-container" class="vh-100">
+    <div class="factura-seccion">
+      <h1>Confirmar Pago</h1>
+      <p>Detalles:</p>
+      <ul>
+        {% for servicio in factura.servicios.all %}
+        <li>
+          <p>{{ servicio.name }} - Precio: ${{ servicio.price }}</p>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="factura-seccion">
+      <p>Fecha de creación: {{ factura.fecha_creacion }}</p>
+    </div>
+
+    <div class="factura-seccion">
+      <p>Correo Electronico: {{ factura.nombre }}</p>
+    </div>
+
+    <div class="factura-seccion">
+      <p>Modo de pago: {{ factura.modo_pago }}</p>
+    </div>
+
+    <div class="factura-seccion">
+      <p>Subtotal: ${{ factura.total_factura }}</p>
+    </div>
+
+    <div class="factura-seccion">
+      <p>IVA ({{ Factura.IVA_PERCENTAGE }}%): ${{ factura.total_factura_con_iva|floatformat:2 }}</p>
+    </div>
+
+    <div class="factura-seccion">
+      <p>Total con IVA: ${{ factura.total_factura_con_iva|floatformat:2 }}</p>
+    </div>
+
+    <div class="factura-seccion">
+      {% for cita in historial %}
+      <p id="citas"> {{ cita.fecha }} - {{ cita.hora }} - {{ cita.taller.nombre_taller }}</p>
+      {% endfor %}
+    </div>
+    <div class="factura-seccion" >
+      <a class="boton-pequeno" href="{% url 'verservicios'%}">Volver a carrito</a>
+      <a name="btn-factura" class="boton-pequeno" href="{% url 'lista_talleres'%}">Volver a programar Reserva</a>
+    </div>
+
+    <div class="bnt-seccion">
+      <form action="{% url 'tu_vista_confirmar_pago' factura.id %}" method="post">
+        {% csrf_token %}
+        <button type="submit" id="confirmar">Confirmar Pago</button>
+      </form>
+    </div>
+    
+
+  </div>
+
+  </div>
+
+</body <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+
+</html>
+{% endblock %}

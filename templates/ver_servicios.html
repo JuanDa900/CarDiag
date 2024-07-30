@@ -1,0 +1,102 @@
+{% extends 'index/index2.html' %}
+{% load static %}
+{% load custom_filters %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-GLhlTQ8iKsRHKk21G1tuSJ9a8me9z/9SOJoyH8Rd6l5UqqqQa1FVRDIaS+qDmeQ" crossorigin="anonymous">    <link rel="stylesheet" href="{% static 'css/servicios.css' %}?v=2">
+    <title>Servicios</title>
+</head>
+
+<body>
+
+    <div class="py-1 d-flex justify-content-center vh-100">
+        <div class="row">
+            <h1>Servicios Sugeridos</h1>
+            <div id="fi1">
+                <ul>
+                    {% for servicio in servicios_relacionados %}
+                    <li>
+                        <strong>{{ servicio.name }}</strong>
+                        <p>{{ servicio.description }}</p>
+                        <p>Precio: ${{ servicio.price }}</p>
+
+                        <form method="post" action="">
+                            {% csrf_token %}
+                            <input type="hidden" name="servicio_id" value="{{ servicio.id }}">
+                            <button type="submit">Añadir al Carrito</button>
+                        </form>
+
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <h1>Todos los Servicios</h1>
+            <div id="fi1">
+                <ul>
+                    {% for servicio in servicios %}
+                    <li>
+                        <strong>{{ servicio.name }}</strong>
+                        <p>{{ servicio.description }}</p>
+                        <p>Precio: ${{ servicio.price }}</p>
+                        <form method="post" action="">
+                            {% csrf_token %}
+                            <input type="hidden" name="servicio_id" value="{{ servicio.id }}">
+                            <button type="submit">Añadir al Carrito</button>
+                        </form>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            
+
+            <button type="button" id="btn-carrito"><i class="fa-solid  fa-shopping-cart"></i>({{ cantidad_en_carrito }})</button>
+
+            <div id="carrito-detalle" style="display: none;">
+                <h2>Detalles del Carrito</h2>
+                <ul>
+                    {% for servicio in carrito_detalles %}
+                    <li>
+                        <p>{{ servicio.name }} - Precio: ${{ servicio.price }}</p>
+                        <form method="post" action="{% url 'eliminar_servicio_carrito' %}">
+                            {% csrf_token %}
+                            <input type="hidden" name="servicio_id" value="{{ servicio.id }}">
+                            <button type="submit">Eliminar</button>
+                        </form>
+                    </li>
+                    {% endfor %}
+                    <p>Precio Total: ${{ carrito_detalles|price_total }}</p>
+                </ul>
+                <br>
+                <div id="factura">
+                    <a name="btn-factura" id="btn-factura" href="{% url 'lista_talleres'%}">Programar Reserva</a>
+        
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('btn-carrito').addEventListener('click', function () {
+            var carritoDetalle = document.getElementById('carrito-detalle');
+            carritoDetalle.style.display = carritoDetalle.style.display === 'none' ? 'block' : 'none';
+        });
+
+
+
+    </script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js" integrity="sha384-…" crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
+{% endblock %}

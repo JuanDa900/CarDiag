@@ -1,0 +1,109 @@
+{% extends 'index/index2.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/chat_diagnostico.css' %}?v=2"> <!-- Puedes añadir estilos específicos para el chat aquí -->
+    <title>Chat Diagnóstico</title>
+</head>
+<body>
+
+    
+
+    <div class=" py-5 px-1 d-flex">
+        <ul id="Menu2">
+            <li><a  href="{% url 'profile' %}">Perfil</a></li>
+            <li><a  href="{% url 'lista_talleres' %}">Encontrar Talleres</a></li>
+            <li class="active"><a  href="#">Iniciar Diagnostico</a></li>
+            <li class="salir"><a  href="{% url 'logout' %}">Salir</a></li>
+            
+    
+        </ul>
+
+
+        <div class="chat-container">
+            <div class="chat-messages" id="chat-messages">
+                <p id="hola">¡Hola! Soy el asistente de CarDiag, aqui puedes enviarme los problemas que tenga tu automovil y te ayudare a solucionarlos.</p>
+            </div>
+    
+            <input type="text" id="chat-input" placeholder="Escribe tu mensaje...">
+            <button id="chat-send">Enviar</button>
+            <a id="taller" href="{% url 'lista_talleres'%}">Buscar Taller</a>
+        </div>
+    
+        <script>
+            document.getElementById('chat-send').addEventListener('click', function() {
+                let chatInput = document.getElementById('chat-input');
+                let chatMessages = document.getElementById('chat-messages');
+            
+                chatMessages.innerHTML += `
+                    <div class="message-container user-container">
+                        <div class="user-message">${chatInput.value}</div>
+                    </div>`;
+    
+                let response = getResponse(chatInput.value);
+    
+                setTimeout(function() {
+                    chatMessages.innerHTML += `
+                        <div class="message-container bot-container">
+                            <div class="bot-message">${response}</div>
+                        </div>`;
+                }, 1000);
+    
+                chatInput.value = '';
+            });
+    
+            function getResponse(message) {
+                message = message.toLowerCase();
+    
+                if (message.includes("luces") && message.includes("no encienden")) {
+                    return "Estas son las posibles causas: Puede que el fusible se haya fundido, puede que el interruptor de las luces esté dañado, es posible que el cableado tenga un corto circuito.";
+                }
+                else if (message.includes("luces") && message.includes("no prenden")) {
+                    return "Estas son las posibles causas: Puede que el fusible se haya fundido, puede que el interruptor de las luces esté dañado, es posible que el cableado tenga un corto circuito.";
+                }
+                else if (message.includes("luz") && message.includes("no prende")) {
+                    return "Estas son las posibles causas: Puede que el fusible se haya fundido, puede que el interruptor de las luces esté dañado, es posible que el cableado tenga un corto circuito.";
+                }
+                else if (message.includes("luz") && message.includes("no enciende")) {
+                    return "Estas son las posibles causas: Puede que el fusible se haya fundido, puede que el interruptor de las luces esté dañado, es posible que el cableado tenga un corto circuito.";
+                }
+                else if (message.includes("frenos") && message.includes("sonido")) {
+                    return "Estas son las posibles causas: Las pastillas de freno podrían estar desgastadas, los discos de freno podrían estar alabeados, es posible que haya suciedad entre el disco y las pastillas.";
+                }
+                else if (message.includes("frenos") && message.includes("chirrian")) {
+                    return "Estas son las posibles causas: Las pastillas de freno podrían estar desgastadas, los discos de freno podrían estar alabeados, es posible que haya suciedad entre el disco y las pastillas.";
+                }
+                else if (message.includes("motor") && message.includes("sobrecalienta")) {
+                    return "Estas son las posibles causas: El radiador podría estar obstruido, puede que el termostato esté dañado, es posible que la bomba de agua no funcione correctamente.";
+                }
+                else if (message.includes("carro") && message.includes("no arranca")) {
+                    return "Estas son las posibles causas: La batería podría estar descargada, el motor de arranque podría estar defectuoso, es posible que el sistema de combustible esté obstruido.";
+                }
+                else if (message.includes("automovil") && message.includes("no arranca")) {
+                    return "Estas son las posibles causas: La batería podría estar descargada, el motor de arranque podría estar defectuoso, es posible que el sistema de combustible esté obstruido.";
+                }
+                else if (message.includes("carro") && message.includes("no enciende")) {
+                    return "Estas son las posibles causas: La batería podría estar descargada, el motor de arranque podría estar defectuoso, es posible que el sistema de combustible esté obstruido.";
+                }
+                else if (message.includes("automovil") && message.includes("no enciende")) {
+                    return "Estas son las posibles causas: La batería podría estar descargada, el motor de arranque podría estar defectuoso, es posible que el sistema de combustible esté obstruido.";
+                }
+                else if (message.includes("vibraciones") && message.includes("al manejar")) {
+                    return "Estas son las posibles causas: Las llantas podrían estar desbalanceadas, los soportes del motor podrían estar desgastados, es posible que los ejes estén dañados.";
+                }
+                else {
+                    return "Lo siento, no tengo suficiente información. Por favor, lleva tu vehículo a un taller para una inspección detallada.";
+                }
+            }
+        </script>
+    
+    </div>
+   
+</body>
+</html>
+{% endblock %}
